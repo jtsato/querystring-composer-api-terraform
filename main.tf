@@ -114,7 +114,14 @@ resource "google_cloud_run_service_iam_policy" "noauth" {
   policy_data = data.google_iam_policy.noauth.policy_data
 }
 
-resource "google_secret_manager_secret" "querystring_db_url" {
+terraform {
+  backend "gcs" {
+    bucket = "duckhome-terraform-state"
+    prefix = "terraform/state"
+  }
+}
+
+resource "google_secret_manager_secret" "qsc_mongodb_url" {
   project   = var.project_id
   secret_id = "mongodb_url"
   replication {
@@ -122,7 +129,7 @@ resource "google_secret_manager_secret" "querystring_db_url" {
   }
 }
 
-resource "google_secret_manager_secret" "querystring_db" {
+resource "google_secret_manager_secret" "qsc_mongodb_database" {
   project   = var.project_id
   secret_id = "mongodb_database"
   replication {
@@ -130,7 +137,7 @@ resource "google_secret_manager_secret" "querystring_db" {
   }
 }
 
-resource "google_secret_manager_secret" "query_structure_collection_name" {
+resource "google_secret_manager_secret" "qsc_query_structure_collection_name" {
   project   = var.project_id
   secret_id = "query_structure_collection_name"
   replication {
@@ -138,7 +145,7 @@ resource "google_secret_manager_secret" "query_structure_collection_name" {
   }
 }
 
-resource "google_secret_manager_secret" "query_structure_sequence_collection_name" {
+resource "google_secret_manager_secret" "qsc_query_structure_sequence_collection_name" {
   project   = var.project_id
   secret_id = "query_structure_sequence_collection_name"
   replication {
@@ -146,7 +153,7 @@ resource "google_secret_manager_secret" "query_structure_sequence_collection_nam
   }
 }
 
-resource "google_secret_manager_secret" "client_collection_name" {
+resource "google_secret_manager_secret" "qsc_client_collection_name" {
   project   = var.project_id
   secret_id = "client_collection_name"
   replication {
@@ -154,7 +161,7 @@ resource "google_secret_manager_secret" "client_collection_name" {
   }
 }
 
-resource "google_secret_manager_secret" "client_sequence_collection_name" {
+resource "google_secret_manager_secret" "qsc_client_sequence_collection_name" {
   project   = var.project_id
   secret_id = "client_sequence_collection_name"
   replication {
