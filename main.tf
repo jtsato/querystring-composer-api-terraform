@@ -116,7 +116,7 @@ resource "google_cloud_run_service_iam_policy" "noauth" {
 
 terraform {
   backend "gcs" {
-    bucket = "duckhome-terraform-state"
+    bucket = "duckhome-qsc-terraform-state"
     prefix = "terraform/state"
   }
 }
