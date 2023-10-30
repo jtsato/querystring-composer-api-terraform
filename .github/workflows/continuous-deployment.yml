@@ -1,6 +1,12 @@
 name: Continuous Deployment to GCP [Linux]
 
 on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "main"
   workflow_dispatch:
 
 jobs:
