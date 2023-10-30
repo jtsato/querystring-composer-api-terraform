@@ -38,19 +38,19 @@ resource "google_cloud_run_service" "default" {
         }
         env {
           name  = "QUERY_STRUCTURE_COLLECTION_NAME"
-          value = var.QUERY_STRUCTURE_COLLECTION_NAME
+          value = var.query_structure_collection_name
         }
         env {
           name  = "QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME"
-          value = var.QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME
+          value = var.query_structure_sequence_collection_name
         }
         env {
           name  = "CLIENT_COLLECTION_NAME"
-          value = var.CLIENT_COLLECTION_NAME
+          value = var.client_collection_name
         }
         env {
           name  = "CLIENT_SEQUENCE_COLLECTION_NAME"
-          value = var.CLIENT_SEQUENCE_COLLECTION_NAME
+          value = var.client_sequence_collection_name
         }
         env {
           name  = "TZ"
