@@ -114,7 +114,7 @@ resource "google_cloud_run_service_iam_policy" "noauth" {
   policy_data = data.google_iam_policy.noauth.policy_data
 }
 
-resource "google_secret_manager_secret" "mongodb_url" {
+resource "google_secret_manager_secret" "querystring_db_url" {
   project   = var.project_id
   secret_id = "mongodb_url"
   replication {
@@ -122,7 +122,7 @@ resource "google_secret_manager_secret" "mongodb_url" {
   }
 }
 
-resource "google_secret_manager_secret" "mongodb_database" {
+resource "google_secret_manager_secret" "querystring_db" {
   project   = var.project_id
   secret_id = "mongodb_database"
   replication {
