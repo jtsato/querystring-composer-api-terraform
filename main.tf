@@ -45,11 +45,11 @@ resource "google_cloud_run_service" "default" {
           value = var.QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME
         }
         env {
-          name = "CLIENT_COLLECTION_NAME"
+          name  = "CLIENT_COLLECTION_NAME"
           value = var.CLIENT_COLLECTION_NAME
         }
         env {
-          name = "CLIENT_SEQUENCE_COLLECTION_NAME"
+          name  = "CLIENT_SEQUENCE_COLLECTION_NAME"
           value = var.CLIENT_SEQUENCE_COLLECTION_NAME
         }
         env {
@@ -130,33 +130,33 @@ resource "google_secret_manager_secret" "mongodb_database" {
   }
 }
 
-resource "google_secret_manager_secret" "QUERY_STRUCTURE_COLLECTION_NAME" {
+resource "google_secret_manager_secret" "query_structure_collection_name" {
   project   = var.project_id
-  secret_id = "QUERY_STRUCTURE_COLLECTION_NAME"
+  secret_id = "query_structure_collection_name"
   replication {
     auto {}
   }
 }
 
-resource "google_secret_manager_secret" "QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME" {
+resource "google_secret_manager_secret" "query_structure_sequence_collection_name" {
   project   = var.project_id
-  secret_id = "QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME"
+  secret_id = "query_structure_sequence_collection_name"
   replication {
     auto {}
   }
 }
 
-resource "google_secret_manager_secret" "CLIENT_COLLECTION_NAME" {
+resource "google_secret_manager_secret" "client_collection_name" {
   project   = var.project_id
-  secret_id = "CLIENT_COLLECTION_NAME"
+  secret_id = "client_collection_name"
   replication {
     auto {}
   }
 }
 
-resource "google_secret_manager_secret" "CLIENT_SEQUENCE_COLLECTION_NAME" {
-  project = var.project_id
-  secret_id = "CLIENT_SEQUENCE_COLLECTION_NAME"
+resource "google_secret_manager_secret" "client_sequence_collection_name" {
+  project   = var.project_id
+  secret_id = "client_sequence_collection_name"
   replication {
     auto {}
   }

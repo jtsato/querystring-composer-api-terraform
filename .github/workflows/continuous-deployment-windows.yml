@@ -79,10 +79,10 @@ jobs:
           Write-Output "aspnetcore_urls=[\"$env:TF_VAR_ASPNETCORE_URLS\"]" >> secrets.tfvars
           Write-Output "mongodb_url=\"$env:TF_VAR_MONGODB_URL\"" >> secrets.tfvars
           Write-Output "mongodb_database=\"$env:TF_VAR_MONGODB_DATABASE\"" >> secrets.tfvars
-          Write-Output "QUERY_STRUCTURE_COLLECTION_NAME=\"$env:TF_VAR_QUERY_STRUCTURE_COLLECTION_NAME\"" >> secrets.tfvars
-          Write-Output "QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME=\"$env:TF_VAR_QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
-          Write-Output "CLIENT_COLLECTION_NAME=\"$env:TF_VAR_CLIENT_COLLECTION_NAME\"" >> secrets.tfvars
-          Write-Output "CLIENT_SEQUENCE_COLLECTION_NAME=\"$env:TF_VAR_CLIENT_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
+          Write-Output "query_structure_collection_name=\"$env:TF_VAR_QUERY_STRUCTURE_COLLECTION_NAME\"" >> secrets.tfvars
+          Write-Output "query_structure_sequence_collection_name=\"$env:TF_VAR_QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
+          Write-Output "client_collection_name=\"$env:TF_VAR_CLIENT_COLLECTION_NAME\"" >> secrets.tfvars
+          Write-Output "client_sequence_collection_name=\"$env:TF_VAR_CLIENT_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
           Write-Output "tz=\"$env:TF_VAR_TZ\"" >> secrets.tfvars
 
       - name: Terraform Destroy

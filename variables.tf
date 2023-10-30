@@ -43,22 +43,22 @@ variable "mongodb_database" {
   type        = string
 }
 
-variable "QUERY_STRUCTURE_COLLECTION_NAME" {
-  description = "Property collection name."
+variable "query_structure_collection_name" {
+  description = "Query structure collection name."
   type        = string
 }
 
-variable "QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME" {
-  description = "Property sequence collection name."
+variable "query_structure_sequence_collection_name" {
+  description = "Query structure sequence collection name."
   type        = string
 }
 
-variable "CLIENT_COLLECTION_NAME" {
+variable "client_collection_name" {
   description = "Client collection name."
   type        = string
 }
 
-variable "CLIENT_SEQUENCE_COLLECTION_NAME" {
+variable "client_sequence_collection_name" {
   description = "Client sequence collection name."
   type        = string
 }
