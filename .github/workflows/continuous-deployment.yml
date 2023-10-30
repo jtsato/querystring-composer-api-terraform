@@ -24,7 +24,7 @@ jobs:
       - name: Get the microservice version from README.md
         id: version
         run: |
-          echo "PPT_PRD=$(cat README.md | grep -o -P '(?<=<!-- ppt-prd-start -->).*(?=<!-- ppt-prd-end -->)')" >> $GITHUB_ENV
+          echo "PPT_PRD=$(cat README.md | grep -o -P '(?<=<!-- qsc-prd-start -->).*(?=<!-- qsc-prd-end -->)')" >> $GITHUB_ENV
 
       - name: Build Image URL
         id: build_image_url

@@ -18,7 +18,7 @@ jobs:
       - name: Get the microservice version from README.md
         id: version
         run: |
-          $PPT_PRD = Get-Content README.md | Select-String -Pattern '(?<=<!-- ppt-prd-start -->).*(?=<!-- ppt-prd-end -->)' | ForEach-Object { $_.Matches.Value }
+          $PPT_PRD = Get-Content README.md | Select-String -Pattern '(?<=<!-- qsc-prd-start -->).*(?=<!-- qsc-prd-end -->)' | ForEach-Object { $_.Matches.Value }
           Write-Output "PPT_PRD=$PPT_PRD" >> $env:GITHUB_ENV
 
       - name: Build Image URL
