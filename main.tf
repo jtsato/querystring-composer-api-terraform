@@ -122,6 +122,7 @@ terraform {
   }
 }
 
+/*
 resource "google_secret_manager_secret" "qsc_mongodb_url" {
   project   = var.project_id
   secret_id = "mongodb_url"
@@ -169,3 +170,4 @@ resource "google_secret_manager_secret" "qsc_client_sequence_collection_name" {
     auto {}
   }
 }
+*/
