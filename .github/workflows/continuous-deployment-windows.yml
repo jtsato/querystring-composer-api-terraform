@@ -52,6 +52,8 @@ jobs:
         run: terraform -version
 
       - name: Terraform Init
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         run: terraform init
 
       - name: Terraform validate
