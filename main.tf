@@ -114,6 +114,7 @@ resource "google_cloud_run_service_iam_policy" "noauth" {
   policy_data = data.google_iam_policy.noauth.policy_data
 }
 
+# gsutil mb -p duckhome-firebase -c STANDARD -l southamerica-east1 gs://duckhome-qsc-terraform-state
 terraform {
   backend "gcs" {
     bucket = "duckhome-qsc-terraform-state"

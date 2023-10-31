@@ -18,20 +18,20 @@ jobs:
       - name: Get the microservice version from README.md
         id: version
         run: |
-          $PPT_PRD = Get-Content README.md | Select-String -Pattern '(?<=<!-- qsc-prd-start -->).*(?=<!-- qsc-prd-end -->)' | ForEach-Object { $_.Matches.Value }
-          Write-Output "PPT_PRD=$PPT_PRD" >> $env:GITHUB_ENV
+          $PRP_PRD = Get-Content README.md | Select-String -Pattern '(?<=<!-- qsc-prd-start -->).*(?=<!-- qsc-prd-end -->)' | ForEach-Object { $_.Matches.Value }
+          Write-Output "PRP_PRD=$PRP_PRD" >> $env:GITHUB_ENV
 
       - name: Build Image URL
         id: build_image_url
         run: |
-          Write-Output "IMAGE_URL=${env:DOCKER_REGISTRY}/jtsato/${env:ARTIFACT_NAME}:${env:PPT_PRD}" >> $env:GITHUB_ENV
+          Write-Output "IMAGE_URL=${env:DOCKER_REGISTRY}/jtsato/${env:ARTIFACT_NAME}:${env:PRP_PRD}" >> $env:GITHUB_ENV
 
       - name: Set Environment Variables from GitHub Secrets
         env:
           IMAGE_URL: ${{ env.IMAGE_URL }}
-          PPT_PRD: ${{ env.PPT_PRD }}
+          PRP_PRD: ${{ env.PRP_PRD }}
         run: |
-          Write-Output "ARTIFACT=${env:IMAGE_URL}:${env:PPT_PRD}"
+          Write-Output "ARTIFACT=${env:IMAGE_URL}:${env:PRP_PRD}"
           Write-Output "TF_LOG=debug" >> $env:GITHUB_ENV
           Write-Output "TF_VAR_PROJECT_ID=${env:PROJECT_ID}" >> $env:GITHUB_ENV
           Write-Output "TF_VAR_CLOUD_REGION=${env:CLOUD_REGION}" >> $env:GITHUB_ENV
