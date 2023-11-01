@@ -80,10 +80,10 @@ jobs:
           echo "aspnetcore_urls=[\"$TF_VAR_ASPNETCORE_URLS\"]" >> secrets.tfvars
           echo "mongodb_url=\"$TF_VAR_MONGODB_URL\"" >> secrets.tfvars
           echo "mongodb_database=\"$TF_VAR_MONGODB_DATABASE\"" >> secrets.tfvars
-          echo "QUERY_STRUCTURE_COLLECTION_NAME=\"$TF_VAR_QUERY_STRUCTURE_COLLECTION_NAME\"" >> secrets.tfvars
-          echo "QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME=\"$TF_VAR_QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
-          echo "CLIENT_COLLECTION_NAME=\"$TF_VAR_CLIENT_COLLECTION_NAME\"" >> secrets.tfvars
-          echo "CLIENT_SEQUENCE_COLLECTION_NAME=\"$TF_VAR_CLIENT_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
+          echo "query_structure_collection_name=\"$TF_VAR_QUERY_STRUCTURE_COLLECTION_NAME\"" >> secrets.tfvars
+          echo "query_structure_sequence_collection_name=\"$TF_VAR_QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
+          echo "client_collection_name=\"$TF_VAR_CLIENT_COLLECTION_NAME\"" >> secrets.tfvars
+          echo "client_sequence_collection_name=\"$TF_VAR_CLIENT_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
           echo "tz=\"$TF_VAR_TZ\"" >> secrets.tfvars
 
       - name: Terraform Destroy
