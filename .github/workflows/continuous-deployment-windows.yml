@@ -46,6 +46,9 @@ jobs:
           Write-Output "TF_VAR_QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME=${secrets.QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME}" >> $env:GITHUB_ENV
           Write-Output "TF_VAR_CLIENT_COLLECTION_NAME=${secrets.CLIENT_COLLECTION_NAME}" >> $env:GITHUB_ENV
           Write-Output "TF_VAR_CLIENT_SEQUENCE_COLLECTION_NAME=${secrets.CLIENT_SEQUENCE_COLLECTION_NAME}" >> $env:GITHUB_ENV
+          Write-Output "TF_VAR_OPENAI_API_BASE_URL=${vars.OPENAI_API_BASE_URL}" >> $env:GITHUB_ENV
+          Write-Output "TF_VAR_OPENAI_API_RETRY_ATTEMPTS=${vars.OPENAI_API_RETRY_ATTEMPTS}" >> $env:GITHUB_ENV
+          Write-Output "TF_VAR_OPENAI_API_RETRY_DELAY_IN_SECONDS=${vars.OPENAI_API_RETRY_DELAY_IN_SECONDS}" >> $env:GITHUB_ENV
           Write-Output "TF_VAR_TZ=${env:TZ}" >> $env:GITHUB_ENV
 
       - name: Terraform Version
@@ -79,6 +82,9 @@ jobs:
           Write-Output "query_structure_sequence_collection_name=\"$env:TF_VAR_QUERY_STRUCTURE_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
           Write-Output "client_collection_name=\"$env:TF_VAR_CLIENT_COLLECTION_NAME\"" >> secrets.tfvars
           Write-Output "client_sequence_collection_name=\"$env:TF_VAR_CLIENT_SEQUENCE_COLLECTION_NAME\"" >> secrets.tfvars
+          Write-Output "openai_api_base_url=\"$env:TF_VAR_OPENAI_API_BASE_URL\"" >> secrets.tfvars
+          Write-Output "openai_api_retry_attempts=\"$env:TF_VAR_OPENAI_API_RETRY_ATTEMPTS\"" >> secrets.tfvars
+          Write-Output "openai_api_retry_delay_in_seconds=\"$env:TF_VAR_OPENAI_API_RETRY_DELAY_IN_SECONDS\"" >> secrets.tfvars
           Write-Output "tz=\"$env:TF_VAR_TZ\"" >> secrets.tfvars
 
       - name: Terraform Destroy

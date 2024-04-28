@@ -63,6 +63,21 @@ variable "client_sequence_collection_name" {
   type        = string
 }
 
+variable "openai_api_base_url" {
+  description = "OpenAI API base URL."
+  type        = string
+}
+
+variable "openai_api_retry_attempts" {
+  description = "OpenAI API retry attempts."
+  type        = string
+}
+
+variable "openai_api_retry_delay_in_seconds" {
+  description = "OpenAI API retry delay in seconds."
+  type        = string
+}
+
 variable "tz" {
   description = "Timezone."
   type        = string
