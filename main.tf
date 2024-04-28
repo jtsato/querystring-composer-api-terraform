@@ -53,6 +53,18 @@ resource "google_cloud_run_service" "default" {
           value = var.client_sequence_collection_name
         }
         env {
+          name  = "OPENAI_API_BASE_URL"
+          value = var.openai_api_base_url
+        }
+        env {
+          name  = "OPENAI_API_RETRY_ATTEMPTS"
+          value = var.openai_api_retry_attempts
+        }
+        env {
+          name  = "OPENAI_API_RETRY_DELAY_IN_SECONDS"
+          value = var.openai_api_retry_delay_in_seconds
+        }
+        env {
           name  = "TZ"
           value = var.tz
         }
