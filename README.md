@@ -2,7 +2,7 @@
 Query String API IaC project.
 
 ## Production Version:
-* Query String API: <!-- qsc-prd-start -->v1.0.0-24051148<!-- qsc-prd-end -->
+* Query String API: <!-- qsc-prd-start -->v1.0.0-24051249<!-- qsc-prd-end -->
 
 ## Technology stack
 
