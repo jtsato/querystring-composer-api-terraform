@@ -3,6 +3,10 @@ name: Continuous Deployment to GCP [Windows]
 on:
   workflow_dispatch:
 
+concurrency:
+  group: "continuous-deployment"
+  cancel-in-progress: false
+
 jobs:
   deploy-infrastructure:
     runs-on: windows-latest
