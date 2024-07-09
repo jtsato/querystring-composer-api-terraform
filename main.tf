@@ -79,7 +79,7 @@ resource "google_cloud_run_v2_service" "default" {
 
     scaling {
       min_instance_count = 0
-      max_instance_count = 2
+      max_instance_count = 1
     }
 
     service_account = var.service_name
