@@ -17,6 +17,15 @@ resource "google_cloud_run_v2_service" "default" {
         container_port = 80
       }
 
+      resources {
+        limits = {
+          memory = "512Mi"
+          cpu    = "1"
+        }
+        cpu_idle = true
+        startup_cpu_boost = true
+      }
+
       env {
         name  = "ASPNETCORE_URLS"
         value = join(",", var.aspnetcore_urls)
