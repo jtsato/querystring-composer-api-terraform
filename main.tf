@@ -23,7 +23,7 @@ resource "google_cloud_run_v2_service" "default" {
           cpu    = "1"
         }
         cpu_idle = true
-        startup_cpu_boost = true
+        startup_cpu_boost = false
       }
 
       env {
